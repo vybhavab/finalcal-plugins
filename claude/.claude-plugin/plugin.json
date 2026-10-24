@@ -1,0 +1,15 @@
+{
+  "name": "finalcal",
+  "displayName": "FinalCal",
+  "version": "0.1.0",
+  "description": "Find events, check availability, and manage your connected Google calendars through FinalCal.",
+  "author": {
+    "name": "Vybhav Achar Bhargav",
+    "email": "vybhavab@gmail.com",
+    "url": "https://finalcal.com"
+  },
+  "homepage": "https://finalcal.com/docs/mcp/",
+  "privacyPolicyUrl": "https://finalcal.com/privacy/",
+  "license": "MIT",
+  "keywords": ["calendar", "google-calendar", "scheduling", "finalcal"]
+}

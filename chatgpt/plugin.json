@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "finalcal",
+  "version": "0.1.0",
+  "description": "Find events, check availability, and manage your connected Google calendars through FinalCal.",
+  "author": { "name": "Vybhav Achar Bhargav", "email": "vybhavab@gmail.com", "url": "https://finalcal.com" },
+  "homepage": "https://finalcal.com/docs/mcp/",
+  "license": "MIT",
+  "keywords": ["calendar", "google-calendar", "scheduling", "finalcal"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "FinalCal",
+        "shortDescription": "Manage your Google calendars",
+        "longDescription": "Find events, check availability, and create, edit, or delete events in Google calendars linked to your FinalCal account. Connect with OAuth and choose read or write access. Invitations can email guests. Disconnect at any time in FinalCal.",
+        "developerName": "Vybhav Achar Bhargav",
+        "category": "Productivity",
+        "capabilities": ["Find calendar events", "Check availability", "Manage calendar events"],
+        "websiteURL": "https://finalcal.com/docs/mcp/",
+        "supportURL": "https://finalcal.com/support/",
+        "privacyPolicyURL": "https://finalcal.com/privacy/",
+        "termsOfServiceURL": "https://finalcal.com/terms/",
+        "defaultPrompt": ["What is on my calendar tomorrow?", "Find a free hour on my calendar next week.", "Help me schedule a meeting in my work calendar."],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      },
+      "onboardingSkill": "./skills/manage-calendar/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            { "description": "Read an agenda", "prompt": "What is on my primary calendar tomorrow?", "tools_triggered": "list_accounts, list_calendars, list_events", "expected_behavior": "Resolve the connected primary calendar and time zone, list tomorrow's actual events, and make no changes." },
+            { "description": "Read event details", "prompt": "Find my MCP Review meeting next week and show its details.", "tools_triggered": "list_accounts, list_calendars, list_events, get_event", "expected_behavior": "Find the seeded meeting in the test account and show its time, guests, and location. Ask which event if more than one matches." },
+            { "description": "Check availability", "prompt": "When am I free for 30 minutes tomorrow between 9am and 5pm?", "tools_triggered": "list_accounts, list_calendars, free_busy", "expected_behavior": "Use the test calendar's time zone and accessible availability. Treat unknown availability as unknown and state the scope checked." },
+            { "description": "Create then edit an event", "prompt": "Create a private MCP Review Practice event in my test calendar tomorrow from 2pm to 2:30pm, then rename it MCP Review Updated.", "tools_triggered": "list_accounts, list_calendars, create_event, update_event", "expected_behavior": "Require write access, resolve the calendar and time zone, create once with a stable UUID, and edit that returned event. Do not invite guests. Respect host confirmations and report any partial failure." },
+            { "description": "Delete a disposable event", "prompt": "Delete the MCP Review Disposable event in my test calendar next week.", "tools_triggered": "list_accounts, list_calendars, list_events, get_event, delete_event", "expected_behavior": "Identify the seeded disposable event, clarify ambiguity or series scope when necessary, respect host confirmations, and delete only that event with write access." }
+          ],
+          "negative": [
+            { "description": "Unrelated payment", "prompt": "Transfer $100 to another bank account." },
+            { "description": "Unlinked account", "prompt": "Show events from a Google account that is not linked to my FinalCal account." },
+            { "description": "Unsupported recurring edit", "prompt": "Change this recurring meeting to repeat every third Wednesday forever." }
+          ]
+        }
+      }
+    }
+  }
+}

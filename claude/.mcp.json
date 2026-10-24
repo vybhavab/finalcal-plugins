@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "finalcal": {
+      "type": "http",
+      "url": "https://finalcal.com/mcp"
+    }
+  }
+}

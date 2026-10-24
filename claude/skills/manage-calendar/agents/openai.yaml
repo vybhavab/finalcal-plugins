@@ -1,0 +1,3 @@
+interface:
+  display_name: "Manage calendars"
+  short_description: "Find events and schedule with FinalCal"
