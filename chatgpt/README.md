@@ -6,7 +6,7 @@ calendar workflow, icons, and proposed directory review cases. It contains no
 OAuth client secret, access token, or Google credentials.
 
 After deployment, use the OpenAI developer submission flow to upload
-`finalcal-chatgpt-0.1.0.zip`. The public MCP URL is
+`finalcal-chatgpt-0.1.1.zip`. The public MCP URL is
 `https://finalcal.com/mcp`. Authentication uses OAuth with automatic client
 registration (DCR), S256 PKCE, and discovery. The default scope is
 `calendar:read`; users can explicitly choose `calendar:write` on FinalCal's
@@ -14,7 +14,8 @@ connect page. Disconnect at https://finalcal.com/mcp/connections.
 
 Try “What is on my calendar tomorrow?” or “Find a free hour next week.” Supply
 the calendar and time zone for event changes. Invitations may email guests.
-Availability can be unknown. Connections expire after 30 days. This package
+Availability can be unknown. New connections stay active until disconnected.
+Connections made under the former 30-day policy require one reconnect to use the new policy. This package
 does not contain an embedded calendar UI.
 
 The `com.openai` authentication extension in `mcp.json` follows OpenAI's

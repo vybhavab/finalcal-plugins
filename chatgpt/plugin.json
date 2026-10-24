@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "finalcal",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Find events, check availability, and manage your connected Google calendars through FinalCal.",
   "author": { "name": "Vybhav Achar Bhargav", "email": "vybhavab@gmail.com", "url": "https://finalcal.com" },
   "homepage": "https://finalcal.com/docs/mcp/",

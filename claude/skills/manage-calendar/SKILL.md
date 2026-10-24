@@ -8,8 +8,9 @@ description: "Find events, check availability, and create or edit Google Calenda
 If FinalCal is disconnected, use the host's connection flow. Sign in to FinalCal
 and approve access on its dedicated connect page. Start with read access for
 questions; reconnect with write access when the user requests changes. The
-connection can be revoked at https://finalcal.com/mcp/connections and expires
-after 30 days. Never ask the user to paste an access token or Google credential.
+connection stays active until revoked at https://finalcal.com/mcp/connections.
+Connections created under the former 30-day policy require one reconnect to use
+the new policy. Never ask the user to paste an access token or Google credential.
 
 Use `list_accounts` and `list_calendars` to resolve account and calendar IDs.
 Account IDs are provider identifiers, not necessarily email addresses. Avoid
