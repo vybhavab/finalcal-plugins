@@ -34,5 +34,6 @@ Privacy: https://finalcal.com/privacy/
 Terms: https://finalcal.com/terms/
 
 The MIT license covers this distribution package only. The hosted FinalCal
-service remains subject to its terms. See the repository's
-`extensions/RELEASE.md` for the full submission sequence.
+service remains subject to its terms. Public source:
+https://github.com/vybhavab/finalcal-plugins (folder `chatgpt`). Publishing guide:
+https://developers.openai.com/plugins/deploy/submission

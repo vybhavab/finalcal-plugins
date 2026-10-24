@@ -25,4 +25,6 @@ Terms: https://finalcal.com/terms/
 
 The MIT license covers this distribution package only. The hosted FinalCal
 service remains subject to its terms. Installing a package does not publish a
-directory listing; see the repository's `extensions/RELEASE.md` for submission.
+directory listing. Public source: https://github.com/vybhavab/finalcal-plugins
+(folder `claude`, branch `main`). Publishing guide:
+https://claude.com/docs/plugins/submit
